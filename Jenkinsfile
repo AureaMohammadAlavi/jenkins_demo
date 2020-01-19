@@ -3,11 +3,10 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        retry(3) {
+        timeout(3, unit: 'SECONDS') {
           sh "./script.sh"
         }
       }
     }
   }
-
 }
