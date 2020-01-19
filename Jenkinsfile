@@ -1,9 +1,13 @@
-node {
-    stage('Build') {
-        sh 'echo "Hello World"'
-        sh '''
-            echo "Multiline shell steps works too"
-            ls -lah
-        '''
+pipeline {
+  agent any
+  stages {
+    stage('build') {
+      steps {
+        retry(3) {
+          sh "./script.sh"
+        }
+      }
     }
+  }
+
 }
