@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        timeout(3, unit: 'SECONDS') {
+        timeout(time: 3, unit: 'SECONDS') {
           sh "./script.sh"
         }
       }
