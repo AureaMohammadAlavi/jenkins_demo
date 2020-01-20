@@ -20,7 +20,7 @@ pipeline {
           input "should we proceed?"
         }
       }
-      
+
       stage('Fun') {
         steps {
           echo "hello"
@@ -30,11 +30,11 @@ pipeline {
     post {
       always {
         deleteDir()
-        mail to: "m.alavi1986@gmail.com", subject: "${currentBuild.fullDisplayName} ${currentBuild.currentResult}", body: "${env.BUILD_URL}"
+        // mail to: "m.alavi1986@gmail.com", subject: "${currentBuild.fullDisplayName} ${currentBuild.currentResult}", body: "${env.BUILD_URL}"
       }
 
       success {
-        slackSend channel: "#builds", color: "good", message: "The pipeline ${currentBuild.fullDisplayName} completed successfully"
+        // slackSend channel: "#builds", color: "good", message: "The pipeline ${currentBuild.fullDisplayName} completed successfully"
       }
 
     }
