@@ -9,6 +9,6 @@ public class SomeClassTest {
   @Test
   public void test1() {
     SomeClass someClass = new SomeClass();
-    assertEquals(30, someClass.add(10, 20));
+    assertEquals(31, someClass.add(10, 20));
   }
 }
