@@ -32,12 +32,6 @@ pipeline {
         deleteDir()
         // mail to: "m.alavi1986@gmail.com", subject: "${currentBuild.fullDisplayName} ${currentBuild.currentResult}", body: "${env.BUILD_URL}"
       }
-
-      success {
-        // slackSend channel: "#builds", color: "good", message: "The pipeline ${currentBuild.fullDisplayName} completed successfully"
-        // let's see
-      }
-
     }
 
 }
