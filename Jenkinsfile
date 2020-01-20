@@ -10,7 +10,7 @@ pipeline {
         post {
           always {
             junit 'build/test-results/**/*.xml'
-            arhiveArtifacts artifacts: "build/libs/*.jar"
+            archiveArtifacts artifacts: "build/libs/*.jar"
           }
         }
       }
