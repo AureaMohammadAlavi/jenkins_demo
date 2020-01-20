@@ -4,12 +4,13 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh "./gradlew clean check"
+          sh "./gradlew clean build"
         }
 
         post {
           always {
             junit 'build/test-results/**/*.xml'
+            arhiveArtifacts artifacts: "build/libs/*.jar"
           }
         }
       }
