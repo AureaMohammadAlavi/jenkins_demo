@@ -7,6 +7,11 @@ pipeline {
           sh "./gradlew clean check"
         }
       }
+      stage('Fun') {
+        steps {
+          echo "hello"
+        }
+      }
     }
     post {
       always {
