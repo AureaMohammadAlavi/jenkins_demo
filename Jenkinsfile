@@ -6,6 +6,12 @@ pipeline {
         steps {
           sh "./gradlew clean check"
         }
+
+        post {
+          always {
+            junit 'build/test-results/**/*.xml'
+          }
+        }
       }
       stage('Fun') {
         steps {
@@ -13,9 +19,5 @@ pipeline {
         }
       }
     }
-    post {
-      always {
-        junit 'build/test-results/**/*.xml'
-      }
-    }
+
 }
