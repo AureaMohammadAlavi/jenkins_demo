@@ -23,6 +23,7 @@ pipeline {
     post {
       always {
         deleteDir()
+        mail to: "m.alavi1986@gmail.com", subject: "${currentBuild.fullDisplayName}", body: "${env.BUILD_URL}"
       }
     }
 
