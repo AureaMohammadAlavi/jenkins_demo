@@ -14,6 +14,13 @@ pipeline {
           }
         }
       }
+
+      stage('Confirmation') {
+        steps {
+          input "should we proceed?"
+        }
+      }
+      
       stage('Fun') {
         steps {
           echo "hello"
