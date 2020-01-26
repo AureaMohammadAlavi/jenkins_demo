@@ -21,11 +21,5 @@ pipeline {
         }
       }
     }
-    post {
-      always {
-        deleteDir()
-        // mail to: "m.alavi1986@gmail.com", subject: "${currentBuild.fullDisplayName} ${currentBuild.currentResult}", body: "${env.BUILD_URL}"
-      }
-    }
 
 }
