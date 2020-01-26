@@ -1,6 +1,9 @@
 pipeline {
     agent any
-    tool name: 'java11', type: 'jdk'
+tools {
+  jdk 'java11'
+}
+
     options { skipStagesAfterUnstable() }
     stages {
       stage('Build') {
